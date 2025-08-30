@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>김범수 | AI·DX 포트폴리오</title>
+  <meta name="description" content="김범수 | KT 부장 · MS AI Tour 발표 · GenAI해카톤 최우수상(InsightMate) · 국가 자문/평가/기획 · NCS 개발·집필." />
+  <meta property="og:title" content="김범수 | AI·DX 포트폴리오" />
+  <meta property="og:description" content="해커톤 발표 영상과 MS AI Tour 현장 사진으로 시작하는 원파일 포트폴리오" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ko_KR" />
+  <style>
+    /* ===== Minimal, focus-first design ===== */
+    :root{
+      --bg:#ffffff; --ink:#111418; --muted:#5a6574;
+      --line:#e8ecf2; --panel:#ffffff; --shadow: 0 8px 30px rgba(0,0,0,.06);
+      --brand:#1a73e8; --brand-2:#16a34a;
+    }
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg:#0b0f14; --panel:#10151c; --ink:#eef3fa; --muted:#9aabba; --line:#1b2330; --shadow: 0 8px 30px rgba(0,0,0,.35);
+      }
+      a{color:#7cc0ff}
+    }
+    *{box-sizing:border-box}
+    body{margin:0; background:var(--bg); color:var(--ink);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Noto Sans KR, Apple SD Gothic Neo, Inter, Arial, sans-serif;
+      line-height:1.65; letter-spacing:.1px;
+    }
+    a{color:var(--brand); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:1080px; margin:0 auto; padding:20px 20px 48px}
+    /* Header */
+    header.site{position:sticky; top:0; z-index:50; background:var(--panel);
+      border-bottom:1px solid var(--line); backdrop-filter:saturate(1.2) blur(6px)}
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:10px 0}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:800; font-size:15px}
+    .brand img{width:36px; height:36px; border-radius:50%; object-fit:cover; border:1px solid var(--line)}
+    .actions{display:flex; gap:8px; align-items:center; flex-wrap:wrap}
+    .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:12px; border:1px solid var(--line); background:var(--panel); transition:transform .18s ease, box-shadow .18s ease}
+    .btn:hover{transform:translateY(-1px); box-shadow:var(--shadow)}
+    .btn.primary{background:var(--brand); color:#fff; border-color:transparent; font-weight:700}
+    .btn.ghost{background:transparent}
+    /* Hero */
+    .hero{display:grid; gap:16px; grid-template-columns: 1.25fr .75fr; align-items:stretch; margin-top:18px}
+    @media (max-width: 960px){ .hero{grid-template-columns: 1fr} }
+    .card{background:var(--panel); border:1px solid var(--line); border-radius:16px; box-shadow:var(--shadow); overflow:hidden; will-change:transform}
+    /* Tilt base (마우스 기울기) */
+    .card[data-tilt]{transform:perspective(1000px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)); transition:transform .2s ease, box-shadow .2s ease}
+    .card[data-tilt]:hover{box-shadow:0 12px 40px rgba(0,0,0,.10)}
+    .media{position:relative; aspect-ratio:16/9; background:#000; overflow:hidden}
+    .media iframe, .media img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; will-change:transform}
+    .stack{display:grid; gap:12px; padding-bottom:12px}
+    .intro{display:grid; grid-template-columns: auto 1fr; gap:14px; align-items:center; padding:16px}
+    .intro img{width:80px; height:80px; border-radius:16px; object-fit:cover; border:1px solid var(--line)}
+    .intro h1{margin:0; font-size:26px; line-height:1.2}
+    .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:6px}
+    .chip{font-size:12px; padding:6px 10px; border-radius:999px; background:#f2f6ff; color:#234; border:1px solid var(--line); transition:transform .18s ease}
+    .chip:hover{transform:translateY(-2px)}
+    @media (prefers-color-scheme: dark){ .chip{background:#111a27; color:#c7d6ea} }
+    .caption{padding:12px 14px; border-top:1px solid var(--line); color:var(--muted); font-size:14px}
+    /* Sections */
+    section{scroll-margin-top:80px; margin-top:28px}
+    h2{font-size:22px; margin:0 0 12px; position:relative}
+    h2::after{content:""; position:absolute; left:0; bottom:-6px; width:56px; height:3px; background:linear-gradient(90deg,var(--brand),var(--brand-2)); border-radius:3px; opacity:.85}
+    .list{background:var(--panel); border:1px solid var(--line); border-radius:14px; box-shadow:var(--shadow); padding:16px}
+    .list ul{margin:0; padding:0 0 0 18px}
+    .two{display:grid; grid-template-columns: 1fr 1fr; gap:16px}
+    @media (max-width: 900px){ .two{grid-template-columns: 1fr} }
+    .timeline{display:grid; gap:10px}
+    .item{padding:12px 14px; border:1px solid var(--line); border-radius:12px; background:var(--panel); transition:transform .18s ease}
+    .item:hover{transform:translateY(-2px)}
+    .when{font-size:12px; color:var(--muted)}
+    .what{font-weight:700}
+    .desc{color:var(--muted)}
+    .badges{display:flex; flex-wrap:wrap; gap:8px; margin-top:6px}
+    .badge{font-size:12px; padding:6px 10px; border-radius:10px; border:1px solid var(--line); background:#f8fafc; display:inline-flex; align-items:center; gap:8px; transition:transform .18s ease, box-shadow .18s ease}
+    .badge:hover{transform:translateY(-3px); box-shadow:var(--shadow)}
+    .badge svg{width:14px; height:14px; flex:0 0 14px}
+    @media (prefers-color-scheme: dark){ .badge{background:#111a27; color:#dfe7f3} }
+    footer{margin-top:40px; padding-top:12px; border-top:1px solid var(--line); color:var(--muted); display:flex; justify-content:space-between; align-items:center; gap:8px}
+    /* Animate in base */
+    [data-animate]{opacity:0; transform: translateY(8px); transition: opacity .5s ease, transform .5s ease}
+    [data-animate].in{opacity:1; transform: none}
+    /* Stagger children: JS가 .stagger -> .show 붙임 */
+    .stagger{opacity:0; transform:translateY(6px)}
+    .stagger.show{opacity:1; transform:none; transition:opacity .5s ease, transform .5s ease}
+    /* Book card */
+    .book-card{display:grid; grid-template-columns: 120px 1fr; gap:12px; align-items:center; padding:12px; border:1px solid var(--line); border-radius:12px; background:var(--panel)}
+    .book-card img{width:120px; height:auto; border-radius:8px; border:1px solid var(--line); object-fit:cover}
+    @media (max-width: 560px){ .book-card{grid-template-columns: 1fr} .book-card img{width:100%} }
+    /* Reduce motion: 애니메이션 최소화 */
+    @media (prefers-reduced-motion: reduce){
+      .btn, .badge, .chip, .item, .card[data-tilt]{transition:none}
+      [data-animate], .stagger, .stagger.show{opacity:1; transform:none !important}
+    }
+  </style>
+</head>
+<body>
+  <header class="site">
+    <div class="wrap nav">
+      <div class="brand">
+        <img src="김범수_프로필.jpg" alt="김범수 프로필"/>
+        <span>김범수 · AX 개발·기획·컨설팅·영업</span>
+      </div>
+      <nav class="actions" aria-label="섹션 이동">
+        <a class="btn ghost" href="#highlights">하이라이트</a>
+        <a class="btn ghost" href="#focus">최신관심사항</a>
+        <a class="btn ghost" href="#committees">국가 위원/자문</a>
+        <a class="btn ghost" href="#experience">경력·학력</a>
+        <a class="btn ghost" href="#awards">자격·수상</a>
+        <button id="print" class="btn primary" type="button">PDF 저장</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- HERO: 영상 + 사진(들) -->
+    <section id="hero" class="hero" data-animate data-stagger=".intro .chip">
+      <!-- Video -->
+      <article class="card" data-tilt>
+        <div class="media" id="videoBox" data-parallax="0.15" data-src="https://www.youtube-nocookie.com/embed/kTcCKdhByBs?rel=0&modestbranding=1">
+          <iframe title="미라클100 GenAI 해카톤 발표 영상(YouTube)" src="about:blank" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <div class="intro">
+          <img src="김범수_프로필.jpg" alt="김범수 프로필 사진" />
+          <div>
+            <h1>김범수 <small style="font-weight:700; color:var(--muted)">KT 부장 · 숙명여대 산학협력교수</small></h1>
+            <div class="chips">
+              <span class="chip">AI/데이터/클라우드</span>
+              <span class="chip">국가 자문·평가·기획</span>
+              <span class="chip">NCS 개발·개선·집필</span>
+              <span class="chip">InsightMate 저작권 C-2024-029907</span>
+            </div>
+          </div>
+        </div>
+        <div class="caption">미라클100 – InsightMate 최우수상 발표 하이라이트 영상</div>
+      </article>
+
+      <!-- Highlight Photos (stacked) -->
+      <aside class="card stack" data-tilt>
+        <div class="media" data-parallax="0.28">
+          <img src="김범수_MS_Tour.jpg" alt="Microsoft AI Tour Seoul 발표 사진 1"/>
+        </div>
+        <div class="media" data-parallax="0.36">
+          <img src="김범수_MS_Tour2.jpg" alt="Microsoft AI Tour Seoul 발표 사진 2"/>
+        </div>
+        <div class="caption">Microsoft AI Tour Seoul (2025.03) 현장</div>
+      </aside>
+    </section>
+
+    <!-- 하이라이트: what + desc 구조 -->
+    <section id="highlights" data-animate data-stagger=".list .item">
+      <h2>하이라이트</h2>
+      <div class="list">
+        <div class="item">
+          <div class="what"><b>InsightMate 최우수상(미라클100, 2024)</b></div>
+          <div class="desc">생성형 AI 기반 B2B 영업 코칭 · 프로그램 저작권 보유(C-2024-029907)</div>
+        </div>
+        <div class="item">
+          <div class="what"><b>국가 자문·평가·기획(2020–2025)</b></div>
+          <div class="desc">KIAT 분과위원장(‘25) · IITP 중장기 R&D 기획위원(‘24) · HRDK 자격 자문(‘23) · NIPA AI 집적단지 자문(‘20~‘23)</div>
+        </div>
+        <div class="item">
+          <div class="what"><b>NCS 개발·개선·집필</b></div>
+          <div class="desc">생성형AI엔지니어링·AIOT플랫폼운영·인공지능서비스기획/운영/모델링 · 데이터거래관리 · NCS확인강사(인공지능·마케팅)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 최신 관심사: what + desc 구조 -->
+    <section id="focus" data-animate data-stagger=".list .item">
+      <h2>최신관심사항</h2>
+      <div class="two">
+        <div class="list">
+          <div class="item">
+            <div class="what"><b>기업, 공공기관 AI 도입전략</b></div>
+            <div class="desc">Personal AI → Team AI → Enterprise AI 3단계 확산 전략</div>
+          </div>
+          <div class="item">
+            <div class="what"><b>기업 내 Low Code 기반 AI Agent 확산 전략</b></div>
+            <div class="desc">Power Platform·Copilot Studio 중심의 현업 확산 모델과 거버넌스</div>
+          </div>
+          <div class="item">
+            <div class="what"><b>MS Copilot(CSP) 윈백·진입 전략</b></div>
+            <div class="desc">PoC–파일럿–확산 단계별 침투/대체/공존 시나리오</div>
+          </div>
+          <div class="item">
+            <div class="what"><b>MCP 구축 · 바이브코딩 · OpenAI GPT OSS</b></div>
+            <div class="desc">사내 보안망 연계 MCP · 로컬 OSS 배포 · 개발자 생산성 체계</div>
+          </div>
+        </div>
+        <article class="card" data-tilt>
+          <div class="media" id="videoFocus" data-parallax="0.2" data-src="https://www.youtube-nocookie.com/embed/s10eAJYKNOM?rel=0&modestbranding=1">
+            <iframe title="기업·공공 AI 도입전략 관련 발표(YouTube)" src="about:blank" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          </div>
+          <div class="caption">YouTube: AI를 활용한 업무 효율화 방안 — 김범수</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 위원/자문: 년도별 요약 리스트 -->
+    <section id="committees" data-animate data-stagger=".timeline .item">
+      <h2>위원·자문·평가·기획 (요약)</h2>
+      <div class="timeline">
+        <div class="item">
+          <div class="when">2017-2025</div>
+          <div class="what">NCS(국가직무능력) 기획, 개발, 집필 <b>집필위원장· 개발위원</b></div>
+          <div class="desc">데이터거래관리, 생성형AI엔지니어링, 인공지능서비스기획, 모델링, 운영 등 </div>
+        </div>
+        <div class="item">
+          <div class="when">2025</div>
+          <div class="what">산업부·KIAT 국가 산업전략 자문위원회 <b>운영분과 분과위원장</b></div>
+          <div class="desc">미디어분야, 컨텐츠분야, 가전분야 </div>
+        </div>
+        <div class="item">
+          <div class="when">2024</div>
+          <div class="what">IITP(과기정통부) 중장기 R&D <b>기획위원</b> · 중기부 창업사업화 <b>평가위원</b> · 산업부 <b>정책 자문회의</b></div>
+          <div class="desc">AI 집적단지 기획</div>
+        </div>
+
+        <!-- TRM: 영상 제거, '온라인 발표'에 하이퍼링크만 적용 -->
+        <div class="item">
+          <div class="when">2021-2023</div>
+          <div class="what">중기부 <b>전략기술로드맵(TRM)</b> <b>기획위원</b>(서비스플랫폼)</div>
+          <div class="desc">로드맵 작성·자문·
+            <a href="https://youtu.be/EW5zmGAVB9I?si=MEuizqKWy0ma6WQf" target="_blank" rel="noopener">온라인 발표</a>
+          </div>
+        </div>
+        <!-- // TRM 링크 끝 -->
+
+        <div class="item">
+          <div class="when">2020</div>
+          <div class="what">NIPA <b>AI 산업융합 집적단지</b> 중장기 로드맵 <b>기획위원</b></div>
+          <div class="desc">중장기 로드맵 기획</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 경력/학력: 2열 -->
+    <section id="experience" class="two" data-animate data-stagger=".timeline .item, .list li">
+      <div>
+        <h2>경력</h2>
+        <div class="timeline">
+          <div class="item"><div class="when">2011.07–현재</div><div class="what">KT · AX오퍼링개발 팀장, AI· Data확산팀장,AI코칭팀장</div><div class="desc">AX 오퍼링개발, 파이프라인발굴, B2B AX 전략 수립, AI Agent 개발, AI 기반 KT 백오피스 혁신, AI 교육 </div></div>
+          <div class="item"><div class="when">2019.07–현재</div><div class="what">숙명여자대학교 · 빅데이터분석융합학과 산학협력교수</div><div class="desc">M/L, D/L 기반 AI 서비스개발(2021-2022), 생성형AI기반 AI 서비스 개발(2023-2024), AI Agent 개발(2025)</div></div>
+          <div class="item"><div class="when">2010.03–2011.06</div><div class="what">상명대학교 · 컴퓨터공학과 겸임교수</div><div class="desc">디지털트랜스포메이션</div></div>
+          <div class="item"><div class="when">2004.05–2011.06</div><div class="what">브레인스토어코리아 · 이사</div><div class="desc">삼성SDS,포스데이터, 동부CNI, 한솔PNS(PSP/TSP기반 IT SixSigma, IT신사업발굴 컨설팅), KT/KTF(Six Sigma컨설팅), 오츠카제약,KT(신사업발굴 컨설팅) </div></div>
+          <div class="item"><div class="when">1998.03–2004.04</div><div class="what">LG전자 · 선임연구원</div><div class="desc">LG전자생산기술원, Platform Modular Design 컨설팅, Mobile, 냉장고 NPI 기반 신상품개발 컨설팅, Master Black Belt(LG화학, LG산전, LG LCD, LG건설 Six Sigms컨설팅)</div></div>
+        </div>
+      </div>
+      <div>
+        <h2>학력</h2>
+        <div class="list">
+          <ul>
+            <li><b>을지대학교</b> 의료IT융합학과 <b>박사</b> — 트랜스포머 개선 모델 (2021.08)</li>
+            <li><b>Helsinki Business School</b> <b>MBA</b> (Finance & Banking, 2008.08)</li>
+            <li><b>포항공과대학교</b> 산업공학과 <b>석사</b> — 음성인식 UI (1998.02)</li>
+            <li><b>포항공과대학교</b> 산업공학과 <b>학사</b> (1996.02)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- NCS & IP -->
+    <section id="ncs" class="two" data-animate data-stagger=".list li, .badges .badge">
+      <div>
+        <h2>NCS 개발·개선·집필</h2>
+        <div class="list">
+          <ul>
+            <li>2025: <b>생성형AI 엔지니어링</b> 개발위원 · <b>AIOT 플랫폼운영</b> 개발위원</li>
+            <li>2024: <b>데이터거래관리</b> 개발위원 · <b>인공지능서비스운영</b> 개선사업 개발위원</li>
+            <li>2023: <b>인공지능모델링</b> 개선사업 개발위원</li>
+            <li>2022: <b>디지털트윈 구축</b> 개발위원 · <b>인공지능서비스기획</b> 개선사업 개발위원</li>
+            <li>2021: <b>인공지능운영관리</b> 집필위원(대표필진)</li>
+            <li>2019: <b>인공지능서비스기획</b> 집필위원 · <b>인공지능모델링</b> 개발위원</li>
+            <li>2018: <b>인공지능서비스기획</b> 개발위원</li>
+          </ul>
+          <div class="badges">
+            <span class="badge">NCS 확인강사(인공지능·마케팅)</span>
+            <span class="badge">K-Digital Training</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h2>지식재산권 · InsightMate</h2>
+        <div class="list">
+          <ul>
+            <li><b>컴퓨터프로그램 저작권</b>: InsightMate — 관상·사주·주역·인연 기반 스몰톡 생성 프로그램</li>
+            <li>등록번호 <b>C-2024-029907</b> · 2024-08-28 · 권리자 김범수</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 자격 / 수상 / 논문·저서 -->
+    <section id="awards" class="two" data-animate data-stagger=".list li, .badges .badge, .book-card">
+      <div>
+        <h2>자격증</h2>
+        <div class="badges">
+          <span class="badge">빅데이터분석기사</span>
+          <span class="badge">데이터거래사</span>
+          <span class="badge">TensorFlow Developer</span>
+          <span class="badge">AICE Associate</span>
+          <span class="badge">Microsoft AI-102</span>
+          <span class="badge">PMP</span>
+          <span class="badge">PSP Instructor</span>
+          <span class="badge">TSP Launch Coach</span>
+          <span class="badge">LG전자 MBB</span>
+          <span class="badge">PCCE</span>
+        </div>
+      </div>
+      <div>
+        <h2>수상 · 논문 · 저서</h2>
+        <div class="list">
+          <ul>
+            <li><b>생성형 AI 해카톤 미라클100 최우수상</b> — InsightMate (2024)</li>
+            <li>IITP <b>주간기술동향 최우수(우수) 집필상</b> 2017</li>
+            <li><b>박사논문</b>: 비정형 빅데이터 기반 주가 추세 예측을 위한 트랜스포머 NLP 개선모델 (2021)</li>
+            <li><b>석사논문</b>: 화자독립형 음성인식 인터페이스의 사용편의성 평가 방법론 (1998)</li>
+            <li><b>MBA논문</b>:ICT-Based Business Communication with Customers in the 4th Industrial Revolution Era (2019)</li>
+            <li><b>저서</b>: (명상과 빅데이터로 만드는) <b>퍼펙트 타이밍</b> (컬처코드, 2013, ISBN 9788994814131)</li>
+          </ul>
+        </div>
+        <!-- Added Book Cover -->
+        <div class="book-card" style="margin-top:10px">
+          <img src="퍼펙타이밍.jpg" alt="저서 퍼펙트 타이밍 표지" />
+          <div>
+            <div class="what"><b>저서 표지</b> — (명상과 빅데이터로 만드는) 퍼펙트 타이밍</div>
+            <div class="desc">컬처코드, 2013 · ISBN 9788994814131</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 연락처 / 링크 -->
+    <section id="contact" data-animate data-stagger=".list li, .badges .badge">
+      <h2>연락처 · 링크</h2>
+      <div class="two">
+        <div class="list">
+          <ul>
+            <li>이메일: <a href="mailto:baemsu@gmail.com">baemsu@gmail.com</a></li>
+            <li>모바일: <a href="tel:+821072307901">010-7230-7901</a></li>
+          </ul>
+        </div>
+        <div class="badges">
+          <a class="badge" href="https://www.linkedin.com/in/baemsu" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.8h.1c.5-.9 1.8-1.8 3.7-1.8 4 0 4.8 2.6 4.8 5.9V21h-4v-5.4c0-1.3 0-3-1.9-3s-2.2 1.5-2.2 2.9V21h-4z"/></svg>
+            LinkedIn
+          </a>
+          <a class="badge" href="https://blog.naver.com/baemsu" target="_blank" rel="noopener" aria-label="Naver Blog">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4" fill="currentColor"/></svg>
+            블로그
+          </a>
+          <a class="badge" href="https://youtube.com/@doctorkim4340" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23 12s0-4.3-.6-6.2c-.3-1-1.1-1.8-2.1-2.1C18.4 3 12 3 12 3s-6.4 0-8.3.7c-1 .3-1.8 1.1-2.1 2.1C1 7.7 1 12 1 12s0 4.3.6 6.2c.3 1 1.1 1.8 2.1 2.1C5.6 21 12 21 12 21s6.4 0 8.3-.7c1-.3 1.8-1.1 2.1-2.1.7-1.9.6-6.2.6-6.2zM9.8 15.5V8.5L16 12l-6.2 3.5z"/></svg>
+            YouTube
+          </a>
+          <a class="badge" href="https://github.com/baemsu" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.6-4-1.6-.6-1.5-1.5-1.9-1.5-1.9-1.2-.8.1-.8.1-.8 1.4.1 2.1 1.4 2.1 1.4 1.2 2.1 3.1 1.5 3.9 1.1.1-.9.5-1.5.9-1.9-2.7-.3-5.6-1.3-5.6-6 0-1.3.5-2.3 1.2-3.2-.1-.3-.6-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.3 11.3 0 0 1 6 0C18.8 6 19.8 6.3 19.8 6.3c.7 1.6.3 2.9.1 3.2.8.9 1.2 1.9 1.2 3.2 0 4.7-2.9 5.7-5.6 6 .5.4 1 1.2 1 2.4v3.5c0 .3.2.7.9.6A12 12 0 0 0 12 .5z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <small>© <span id="year"></span> 김범수 · 업데이트 <span id="updated"></span></small>
+      <div></div>
+    </footer>
+  </main>
+
+  <script>
+    // ----- Lazy-load YouTube embeds (hero, focus) -----
+    function lazyEmbedById(id){
+      const box = document.getElementById(id);
+      if(!box) return;
+      const iframe = box.querySelector('iframe');
+      const src = box.dataset.src;
+      let loaded = false;
+      const load = ()=>{ if(loaded) return; iframe.src = src; loaded = true; };
+      const io = new IntersectionObserver((ents)=>{
+        ents.forEach(e=>{ if(e.isIntersecting){ load(); io.disconnect(); }});
+      }, {threshold:.25});
+      io.observe(box);
+    }
+    ['videoBox','videoFocus'].forEach(lazyEmbedById);
+
+    // Print to PDF
+    document.getElementById('print').addEventListener('click', ()=> window.print());
+
+    // Footer dates
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('updated').textContent = new Date().toISOString().slice(0,10);
+
+    // ----- Animate-in + Stagger -----
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const els = document.querySelectorAll('[data-animate]');
+    const io2 = new IntersectionObserver((ents)=>{
+      ents.forEach(e=>{
+        if(e.isIntersecting){
+          const el = e.target;
+          el.classList.add('in');
+          const sel = el.getAttribute('data-stagger');
+          if(sel && !reduceMotion){
+            sel.split(',').forEach(group=>{
+              const nodes = el.querySelectorAll(group.trim());
+              nodes.forEach((n,i)=>{
+                n.classList.add('stagger');
+                requestAnimationFrame(()=>{
+                  n.style.transitionDelay = (i*60)+'ms';
+                  n.classList.add('show');
+                });
+              });
+            });
+          }
+          io2.unobserve(el);
+        }
+      });
+    }, {threshold:.15});
+    els.forEach(el=> io2.observe(el));
+
+    // ----- Parallax on scroll -----
+    const pxEls = Array.from(document.querySelectorAll('[data-parallax]'));
+    let ticking = false;
+    const onScroll = ()=>{
+      if(ticking || reduceMotion) return;
+      ticking = true;
+      requestAnimationFrame(()=>{
+        const vh = window.innerHeight;
+        pxEls.forEach(el=>{
+          const speed = parseFloat(el.dataset.parallax || '0.2');
+          const r = el.getBoundingClientRect();
+          const centerDelta = ( (r.top + r.height/2) - (vh/2) ) / (vh/2);
+          const move = Math.max(-24, Math.min(24, -centerDelta * speed * 40));
+          el.style.transform = `translateY(${move}px)`;
+        });
+        ticking = false;
+      });
+    };
+    document.addEventListener('scroll', onScroll, {passive:true});
+    window.addEventListener('resize', onScroll);
+    onScroll();
+
+    // ----- Tilt on pointer move -----
+    const tiltCards = document.querySelectorAll('[data-tilt]');
+    const tilt = (card, e)=>{
+      const rect = card.getBoundingClientRect();
+      const cx = rect.left + rect.width/2;
+      const cy = rect.top + rect.height/2;
+      const dx = (e.clientX - cx) / (rect.width/2);
+      const dy = (e.clientY - cy) / (rect.height/2);
+      const max = 6;
+      card.style.setProperty('--ry', `${dx*max}deg`);
+      card.style.setProperty('--rx', `${-dy*max}deg`);
+    };
+    const resetTilt = (card)=>{
+      card.style.setProperty('--ry','0deg');
+      card.style.setProperty('--rx','0deg');
+    };
+    if(!reduceMotion){
+      tiltCards.forEach(card=>{
+        card.addEventListener('pointermove', (e)=>tilt(card,e));
+        card.addEventListener('pointerleave', ()=>resetTilt(card));
+      });
+    }
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        const id = a.getAttribute('href');
+        const el = document.querySelector(id);
+        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
+      });
+    });
+  </script>
+</body>
+</html>
