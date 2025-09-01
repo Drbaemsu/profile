@@ -50,6 +50,8 @@
     .card[data-tilt]:hover{box-shadow:0 12px 40px rgba(0,0,0,.10)}
     .media{position:relative; aspect-ratio:16/9; background:#000; overflow:hidden}
     .media iframe, .media img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; will-change:transform}
+    /* 세로 스크린샷용 */
+    .media.contain img{object-fit:contain; background:#000}
     .stack{display:grid; gap:12px; padding-bottom:12px}
     .intro{display:grid; grid-template-columns: auto 1fr; gap:14px; align-items:center; padding:16px}
     .intro img{width:80px; height:80px; border-radius:16px; object-fit:cover; border:1px solid var(--line)}
@@ -130,6 +132,7 @@
               <span class="chip">AI/데이터/클라우드</span>
               <span class="chip">국가 자문·평가·기획</span>
               <span class="chip">NCS 개발·개선·집필</span>
+              <span class="chip">Microsoft MVP (Copilot Studio)</span>
               <span class="chip">InsightMate 저작권 C-2024-029907</span>
             </div>
           </div>
@@ -139,13 +142,17 @@
 
       <!-- Highlight Photos (stacked) -->
       <aside class="card stack" data-tilt>
+        <!-- 추가: MVP 메일 스크린샷 -->
+        <div class="media contain" data-parallax="0.24">
+          <img src="MSMPV.jpg" alt="Microsoft MVP Copilot Studio 알림 메일 스크린샷"/>
+        </div>
         <div class="media" data-parallax="0.28">
           <img src="김범수_MS_Tour.jpg" alt="Microsoft AI Tour Seoul 발표 사진 1"/>
         </div>
         <div class="media" data-parallax="0.36">
           <img src="김범수_MS_Tour2.jpg" alt="Microsoft AI Tour Seoul 발표 사진 2"/>
         </div>
-        <div class="caption">Microsoft AI Tour Seoul (2025.03) 현장</div>
+        <div class="caption">Microsoft MVP 수상 메일 · Microsoft AI Tour Seoul (2025.03)</div>
       </aside>
     </section>
 
@@ -153,6 +160,12 @@
     <section id="highlights" data-animate data-stagger=".list .item">
       <h2>하이라이트</h2>
       <div class="list">
+        <!-- 추가: MVP -->
+        <div class="item">
+          <div class="what"><b>Microsoft MVP – Copilot Studio (2025)</b></div>
+          <div class="desc">Microsoft Most Valuable Professional · 기술 분야: Copilot Studio</div>
+        </div>
+
         <div class="item">
           <div class="what"><b>InsightMate 최우수상(미라클100, 2024)</b></div>
           <div class="desc">생성형 AI 기반 B2B 영업 코칭 · 프로그램 저작권 보유(C-2024-029907)</div>
@@ -254,9 +267,9 @@
             <li>(2024~현재) <b>전략컨설팅부문 AX오퍼링개발팀장</b> — AI, 클라우드 상품 및 사업개발</li>
             <li>(2023~2024) <b>엔터프라이즈부문 AI·Data확산팀장</b> — AI Agent, RPA 과제 발굴 및 개발</li>
             <li>(2021~2023) <b>인재개발실 에이블스쿨 AI/DX코칭팀장</b> — 국책과제 AI·DX 교육과정 개발·강의·코칭</li>
-            <li>(2019~2020) <b>커스터머부문 유통매장디자인팀장</b> — 
-              <a href="https://biz.heraldcorp.com/article/2547764" target="_blank" rel="noopener">무인매장</a>, 
-              빅데이터 기반 디지털사이니지, 
+            <li>(2019~2020) <b>커스터머부문 유통매장디자인팀장</b> —
+              <a href="https://biz.heraldcorp.com/article/2547764" target="_blank" rel="noopener">무인매장</a>,
+              빅데이터 기반 디지털사이니지,
               <a href="https://weekly.cnbnews.com/news/article.html?no=136942" target="_blank" rel="noopener">체험 특화매장</a> 개발
             </li>
             <li>(2016~2018) <b>커스터머부문 유통SQM팀장</b> — 빅데이터기반 영업 Fraud Detection 체계 구축, 관리, 영업 VOC사전 예측 및 예방</li>
@@ -333,11 +346,13 @@
         <h2>수상 · 논문 · 저서</h2>
         <div class="list">
           <ul>
+            <!-- 추가: MVP 수상 -->
+            <li><b>Microsoft Most Valuable Professional (MVP)</b> — Copilot Studio (2025)</li>
             <li><b>생성형 AI 해카톤 미라클100 최우수상</b> — InsightMate (2024)</li>
             <li>IITP <b>주간기술동향 최우수(우수) 집필상</b> 2017</li>
             <li><b>박사논문</b>: 비정형 빅데이터 기반 주가 추세 예측을 위한 트랜스포머 NLP 개선모델 (2021)</li>
             <li><b>석사논문</b>: 화자독립형 음성인식 인터페이스의 사용편의성 평가 방법론 (1998)</li>
-            <li><b>MBA논문</b>:ICT-Based Business Communication with Customers in the 4th Industrial Revolution Era (2019)</li>
+            <li><b>MBA논문</b>: ICT-Based Business Communication with Customers in the 4th Industrial Revolution Era (2019)</li>
             <li><b>저서</b>: (명상과 빅데이터로 만드는) <b>퍼펙트 타이밍</b> (컬처코드, 2013, ISBN 9788994814131)</li>
           </ul>
         </div>
